@@ -1,0 +1,177 @@
+/* Main suggestion container */
+.suggestion-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 360px;
+  position: fixed;
+  right: 30px;
+  top: 100px;
+  z-index: 999;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Profile section */
+.suggestion-profile .d-flex {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-pic12 {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+.text-primary.ms {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+/* Header */
+.suggestions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.suggestions-header h6 {
+  color: #6c757d;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.suggestions-header b {
+  font-size: 0.85rem;
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+/* Suggested users list */
+.suggested-users {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 10px;
+}
+
+/* Each suggested user */
+.suggested-user {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 10px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.suggested-user:hover {
+  background-color: #f1f1f1;
+}
+
+/* Row layout */
+.suggested-user .d-flex {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Profile image */
+.dpS {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+/* Username */
+.suggested-user h5 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  flex: 1;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Follow button */
+.follow-btn {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.follow-btn:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.05);
+}
+
+.follow-btn.following {
+  background-color: #6c757d;
+}
+
+.follow-btn.following:hover {
+  background-color: #5a6268;
+}
+
+/* No suggestions message */
+.suggested-users > div:last-child {
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
+  padding: 10px 0;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .suggestion-container {
+    position: relative !important;
+    top: 0;
+    right: 0;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+    padding: 18px 16px;
+    margin-top: 12px;
+  }
+
+  .profile-pic12,
+  .dpS {
+    width: 46px;
+    height: 46px;
+  }
+
+  .suggested-user {
+    padding: 10px;
+  }
+
+  .follow-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}

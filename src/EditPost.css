@@ -1,0 +1,45 @@
+.edit-post-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 14px 21px rgba(0,0,0,0.5);
+    margin-top: 50px;
+    border-radius: 30px;
+
+  }
+  .m{
+    text-align: center;
+  }
+
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .preview-image {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  
+  .update-btn {
+    padding: 10px 20px;
+    background-color:green;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width:600px) {
+    .edit-post-container{
+      width:90vw;
+    }
+    
+  }

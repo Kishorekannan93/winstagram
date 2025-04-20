@@ -1,0 +1,16 @@
+.post-detail {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .post-detail img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .post-info {
+    font-size: 18px;
+  }
+  

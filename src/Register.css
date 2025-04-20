@@ -1,0 +1,106 @@
+
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+  
+  .setposition {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .formchange {
+    background-color: white;
+    padding: 30px 25px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .form-label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .form-control {
+    border-radius: 12px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+  }
+  
+  .btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #43e97b, #38f9d7);
+    color: white;
+    transition:background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(to right, #38f9d7, #43e97b);
+  }
+  
+  small.text-muted {
+    display: block;
+    margin-top: 8px;
+    color: #777;
+    font-size: 12px;
+  }
+  
+  .alert {
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 10px 12px;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 500px) {
+    .formchange {
+      padding: 25px 20px;
+      border-radius: 16px;
+    }
+  
+    .form-control,
+    .btn {
+      font-size: 14px;
+    }
+  }
+  

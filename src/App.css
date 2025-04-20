@@ -1,0 +1,92 @@
+body {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+   background-color: #f2f2f2;
+   
+ }
+ 
+ /* Profile Picture */
+ .dp {
+   width: 40px;
+   height: 40px;
+   object-fit: cover;
+ }
+ .profile-pic {
+   width: 30px;
+   height: 30px;
+   object-fit: cover;
+   border-radius: 50%;
+   cursor: pointer;
+ }
+ 
+ 
+ /* Post Container */
+ .edit {
+   background: white;
+   border-radius: 1.5rem;
+   margin-bottom: 1.5rem;
+   padding: 1rem;
+   width: 500px;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+ }
+ 
+ /* Post Image */
+ .post {
+   width: 100%;
+   height: 350px;
+   object-fit: cover;
+   border-radius: 1rem;
+ }
+
+ .custom-footer {
+   background-color: #4a7263; /* Greenish-gray */
+   color: white;
+ }
+ 
+
+ 
+ .username{
+   font-size: small;
+ }
+
+ .propic{
+   width:110px;
+   height:110px;
+   margin:1.2rem;
+ }
+ 
+ /* Breakpoints - reduce width gradually */
+ @media (max-width: 700px) {
+   .edit {
+     width: 90vw;
+     margin: 2rem;
+     margin-bottom: .2rem;
+   }
+ 
+ }
+ 
+ @media (max-width: 500px) {
+   .edit {
+     width: 90vw;
+     margin: 2rem;
+     margin-bottom: .000rem;
+   }
+ 
+   .post {
+     height: 280px;
+   }
+ }
+ 
+ @media (max-width: 400px) {
+   .post {
+     height: 220px;
+   }
+ }
+ 
+ .over{
+  overflow-x: hidden;
+  overflow-y: smooth;
+ }
