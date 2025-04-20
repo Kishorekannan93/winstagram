@@ -5,9 +5,10 @@ import './PostDetail.css'; // Optional, only if you style this page
 const PostDetail = () => {
   const { postId } = useParams();
   const [post, setPost] = useState(null);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/post/${postId}`, {
+    fetch(`${API_BASE_URL}/api/post/${postId}`, {
       credentials: 'include',
     })
       .then(res => res.json())

@@ -13,13 +13,16 @@ const Register = () => {
     const [message,setMessage] = useState("")
     const navigate = useNavigate();
 
+     // Use Vite environment variables
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
+
   
     const handleSubmit = async (e) => {
       e.preventDefault();
       
       try {
           const { data } = await axios.post(
-              "http://localhost:8080/auth/register",
+              `${API_BASE_URL}/auth/register`,
               { username, email, password },
               { withCredentials: true }
           );

@@ -6,6 +6,7 @@ import "./EditPost.css";
 const EditPost = () => {
   const { postId } = useParams();
   const navigate = useNavigate();
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
   const [post, setPost] = useState(null);
   const [caption, setCaption] = useState("");
@@ -14,7 +15,7 @@ const EditPost = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/post/${postId}`, {
+      .get(`${API_BASE_URL}/api/post/${postId}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -26,7 +27,7 @@ const EditPost = () => {
         console.error(err);
         alert("Failed to load post");
       });
-  }, [postId]);
+  }, [postId, API_BASE_URL]);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -49,7 +50,7 @@ const EditPost = () => {
     }
 
     axios
-      .put(`http://localhost:8080/api/post/update/${postId}`, formData, {
+      .put(`${API_BASE_URL}/api/post/update/${postId}`, formData, {
         withCredentials: true,
         headers: {
           "Content-Type": "multipart/form-data",

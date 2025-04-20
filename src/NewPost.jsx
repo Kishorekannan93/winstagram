@@ -9,6 +9,8 @@ const NewPost = () => {
   const [caption, setCaption] = useState("");
   const [image, setImage] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+   // Use Vite environment variables
+   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -31,7 +33,7 @@ const NewPost = () => {
     }
 
     axios
-      .post(`http://localhost:8080/api/post/create`, formData, {
+      .post(`${API_BASE_URL}/api/post/create`, formData, {
         withCredentials: true,
         headers: {
           "Content-Type": "multipart/form-data",
