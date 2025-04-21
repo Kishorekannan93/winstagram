@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import dp from "/assets/dp.jpg";
+
 
 const Profile = () => {
   const [posts, setPosts] = useState([]);
@@ -55,7 +55,7 @@ const Profile = () => {
           >
             <div className="d-flex align-items-center mb-3">
               <img
-                src={post.user?.profilePictureUrl || dp}
+                src={post.user?.profilePictureUrl}
                 className="dp rounded-circle"
                 alt={`${post.user?.username || 'User'}'s profile`}
                 onError={(e) => {
