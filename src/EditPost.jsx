@@ -6,7 +6,7 @@ import "./EditPost.css";
 const EditPost = () => {
   const { postId } = useParams();
   const navigate = useNavigate();
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://winstagram-back.onrender.com";
 
   const [post, setPost] = useState(null);
   const [caption, setCaption] = useState("");
