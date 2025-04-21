@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import dp from "/assets/dp.jpg";
 
-const Feed = () => {
+const Profile = () => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true); 
@@ -87,4 +87,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default Profile;
