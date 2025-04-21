@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaPen } from 'react-icons/fa';
 import axios from 'axios';
 import './Profile.css';
-import defaultProfilePic from '/assets/dp.jpg'; // Import default image
+import defaultProfilePic from './assets/dp.jpg'; // Import default image
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
