@@ -16,37 +16,36 @@ const Register = () => {
      // Use Vite environment variables
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://winstagram-back.onrender.com";
 
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      const { data } = await axios.post(
+          `${API_BASE_URL}/auth/register`,
+          { username, email, password },
+          { withCredentials: true }
+      );
       
-      try {
-          const { data } = await axios.post(
-              `${API_BASE_URL}/auth/register`,
-              { username, email, password },
-              { withCredentials: true }
-          );
-          
-          setError(false);
-          setMessage(data.message || "Registration successful!");
-          setTimeout(() => navigate("/login"), 1000);
-      } catch (err) {
-          setError(true);
-          
-        
-          const backendError = err.response?.data?.error || err.response?.data?.message;
-          
-          let displayMessage;
-          if (backendError?.includes("already exists")) {
-              displayMessage = "This username/email is already taken. Please try another one.";
-          } else {
-              displayMessage = err.response?.data || "Registration failed. Please try again.";
-          }
-          
-          setMessage(displayMessage);
-          console.error("Registration error:", err.response?.data || err.message);
+      setError(false);
+      setMessage(typeof data.message === 'string' ? data.message : JSON.stringify(data.message) || "Registration successful!");
+      setTimeout(() => navigate("/login"), 1000);
+    } catch (err) {
+      setError(true);
+  
+      const backendError = err.response?.data?.error || err.response?.data?.message;
+      
+      let displayMessage;
+      if (backendError?.includes("already exists")) {
+          displayMessage = "This username/email is already taken. Please try another one.";
+      } else {
+          displayMessage = err.response?.data || "Registration failed. Please try again.";
       }
+      
+      setMessage(displayMessage);
+      console.error("Registration error:", err.response?.data || err.message);
+    }
   };
+  
     
     
 
